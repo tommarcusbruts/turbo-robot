@@ -1,4 +1,4 @@
-// use server'
+'use server';
 
 /**
  * @fileOverview This file contains the Genkit flow for generating blog summaries for visitors.

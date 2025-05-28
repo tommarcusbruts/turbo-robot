@@ -1,9 +1,12 @@
+
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
 import { Input } from '@/components/ui/input';
+import { Card } from '@/components/ui/card';
 import { Terminal, HelpCircle, Briefcase, FileText, Mail, Trash2, CornerDownLeft } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
 
 interface HistoryItem {
   id: number;
@@ -59,12 +62,12 @@ export function FakeTerminal() {
       case 'projects':
         type = 'output';
         output = 'Scrolling to projects...';
-        document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+        document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         break;
       case 'blog':
         type = 'output';
         output = 'Scrolling to blog...';
-        document.getElementById('blog')?.scrollIntoView({ behavior: 'smooth' });
+        document.getElementById('blog')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         break;
       case 'contact':
         type = 'output';
