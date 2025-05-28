@@ -3,78 +3,86 @@
 @tailwind utilities;
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
 }
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 3.9%;
-    --primary: 0 0% 9%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --muted: 0 0% 96.1%;
-    --muted-foreground: 0 0% 45.1%;
-    --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
-    --destructive: 0 84.2% 60.2%;
+    --background: 277 43% 95%; /* #F0E8F5 light purple */
+    --foreground: 276 15% 25%; /* #4A3B54 dark purple/grey */
+
+    --card: 277 50% 98%; /* #FCFAFD very light, almost white */
+    --card-foreground: 276 15% 25%;
+
+    --popover: 277 50% 98%;
+    --popover-foreground: 276 15% 25%;
+
+    --primary: 275 57% 63%; /* #A06CD5 vibrant purple */
+    --primary-foreground: 0 0% 98%; /* White/very light for text on primary */
+
+    --secondary: 189 39% 70%; /* Lighter teal for secondary elements #8BC9D1 */
+    --secondary-foreground: 276 15% 20%; /* Darker for text on secondary */
+
+    --muted: 277 30% 90%; /* #E6DCEC muted purple, lighter than background */
+    --muted-foreground: 276 10% 45%; /* #7A7180 */
+
+    --accent: 189 39% 56%; /* #62B1BD muted teal */
+    --accent-foreground: 0 0% 98%; /* White/very light for text on accent */
+
+    --destructive: 0 70% 60%; /* A soft red, e.g. #E56D6D */
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 89.8%;
-    --input: 0 0% 89.8%;
-    --ring: 0 0% 3.9%;
+
+    --border: 275 30% 50%; /* #785A9B - a darker purple for borders */
+    --input: 277 30% 85%; /* #DACEE9 */
+    --ring: 275 57% 63%; /* Primary color for rings */
+
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
+    --radius: 0.8rem; /* Slightly larger radius for cartoon feel */
+
+    /* Sidebar specific colors - can keep as is or adjust if sidebar is used extensively */
+    --sidebar-background: 277 40% 92%;
+    --sidebar-foreground: 276 15% 25%;
+    --sidebar-primary: 275 57% 63%;
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 189 39% 56%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 275 30% 50%;
+    --sidebar-ring: 275 57% 63%;
   }
+
   .dark {
-    --background: 0 0% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 3.9%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 3.9%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 9%;
-    --secondary: 0 0% 14.9%;
+    /* Dark theme to be defined if needed, for now stick to light as per Gumroad style */
+    --background: 276 15% 15%; /* Dark purple/grey */
+    --foreground: 277 43% 95%; /* Light purple */
+
+    --card: 276 15% 20%;
+    --card-foreground: 277 43% 95%;
+
+    --popover: 276 15% 20%;
+    --popover-foreground: 277 43% 95%;
+
+    --primary: 275 57% 63%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 189 39% 40%; /* Darker teal */
     --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 14.9%;
-    --muted-foreground: 0 0% 63.9%;
-    --accent: 0 0% 14.9%;
+
+    --muted: 276 10% 25%;
+    --muted-foreground: 277 30% 70%;
+
+    --accent: 189 39% 56%;
     --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
+
+    --destructive: 0 60% 50%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 14.9%;
-    --input: 0 0% 14.9%;
-    --ring: 0 0% 83.1%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    --border: 275 20% 40%;
+    --input: 276 15% 25%;
+    --ring: 275 57% 63%;
   }
 }
 
@@ -84,5 +92,54 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-inter);
+  }
+  h1, h2, h3, .font-fredoka {
+    font-family: var(--font-fredoka);
+  }
+  code, pre, .font-roboto-mono {
+    font-family: var(--font-roboto-mono);
+  }
+}
+
+@layer components {
+  .comic-border {
+    @apply border-[3px] shadow-[4px_4px_0px_hsl(var(--foreground))] transition-all duration-200 ease-in-out;
+    /* Default border color will be picked by border-border, or can be specified like border-primary */
+    border-radius: var(--radius); /* Or apply uneven radius directly */
+  }
+  .comic-border:hover {
+    @apply transform -translate-x-0.5 -translate-y-0.5 shadow-[6px_6px_0px_hsl(var(--foreground))];
+  }
+
+  .uneven-radius {
+    border-radius: 12px 6px 18px 8px; /* Example of uneven radius */
+  }
+  .uneven-radius-alt {
+    border-radius: 6px 16px 8px 10px; /* Another example */
+  }
+
+  .broken-underline {
+    @apply border-b-2 border-dashed border-current pb-0.5;
+    text-decoration: none !important;
+  }
+
+  .handwritten-highlight {
+    @apply relative inline-block;
+  }
+  .handwritten-highlight::before {
+    content: '';
+    @apply absolute left-[-2px] right-[-2px] top-[50%] h-[0.6em] -translate-y-1/2 -skew-x-[10deg] opacity-40 -z-10;
+    /* Example: yellow highlight. Adjust color as needed */
+    background-color: #FEF3C7; /* Tailwind yellow-200 */
+  }
+  .handwritten-highlight.highlight-teal::before {
+    background-color: hsl(var(--accent) / 0.3);
+  }
+  .handwritten-highlight.highlight-purple::before {
+    background-color: hsl(var(--primary) / 0.3);
+  }
+   .handwritten-highlight.highlight-red::before {
+    background-color: hsl(var(--destructive) / 0.3);
   }
 }

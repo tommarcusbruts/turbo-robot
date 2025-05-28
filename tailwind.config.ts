@@ -9,6 +9,11 @@ export default {
   ],
   theme: {
   	extend: {
+      fontFamily: {
+        sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+        fredoka: ['var(--font-fredoka)', 'cursive'],
+        mono: ['var(--font-roboto-mono)', 'monospace'],
+      },
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
@@ -82,12 +87,25 @@ export default {
   				to: {
   					height: '0'
   				}
-  			}
+  			},
+        'jiggle': {
+          '0%, 100%': { transform: 'rotate(-1deg)' },
+          '50%': { transform: 'rotate(1deg)' },
+        },
+        'pixel-glow': {
+          '0%, 100%': { boxShadow: '0 0 5px hsl(var(--primary)), 0 0 10px hsl(var(--primary))' },
+          '50%': { boxShadow: '0 0 10px hsl(var(--primary)), 0 0 20px hsl(var(--primary))' },
+        }
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
-  		}
+  			'accordion-up': 'accordion-up 0.2s ease-out',
+        'jiggle': 'jiggle 0.3s ease-in-out infinite',
+        'pixel-glow': 'pixel-glow 1.5s ease-in-out infinite alternate',
+  		},
+      zIndex: {
+        '-10': '-10',
+      }
   	}
   },
   plugins: [require("tailwindcss-animate")],
