@@ -55,7 +55,7 @@ export function TechDebrisAnimation() {
           top: `${Math.random() * 100}%`,
           width: `${size}rem`,
           height: `${size}rem`,
-          opacity: Math.random() * 0.2 + 0.1, // 0.1 to 0.3 opacity
+          opacity: Math.random() * 0.3 + 0.2, // 0.1 to 0.3 opacity
           position: 'absolute',
           animationDuration: `${duration}s`,
           animationDelay: `${delay}s`,
@@ -78,7 +78,8 @@ export function TechDebrisAnimation() {
           key={item.id}
           style={item.style}
           className={item.className}
-          strokeWidth={1} // Thinner lines for background elements
+          
+          strokeWidth={5} // Thinner lines for background elements
         />
       ))}
     </div>

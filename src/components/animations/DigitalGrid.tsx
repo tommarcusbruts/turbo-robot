@@ -25,8 +25,8 @@ export function DigitalGrid() {
           style: {
             left: `${(i / NUM_DOTS_X) * 100}%`,
             top: `${(j / NUM_DOTS_Y) * 100}%`,
-            width: '3px',
-            height: '3px',
+            width: '30px',
+            height: '30px',
             backgroundColor: 'hsl(var(--accent) / 0.5)', // Increased opacity
             borderRadius: '50%',
             position: 'absolute',

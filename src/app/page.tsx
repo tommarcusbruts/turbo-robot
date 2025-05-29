@@ -15,11 +15,7 @@ export default function HomePage() {
       </div>
       <FakeTerminal />
       
-      {/* Footer could go here */}
-      <footer className="py-8 text-center text-sm text-muted-foreground bg-background border-t border-border mt-16">
-        <p>&copy; {new Date().getFullYear()} tommarcusbrut. All rights reserved.</p>
-        <p>Built with Next.js, TailwindCSS, and a dash of cyber magic.</p>
-      </footer>
+      
     </main>
   );
 }
