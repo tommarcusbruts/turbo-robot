@@ -45,7 +45,7 @@ export function RainingCode() {
       {drops.map((drop) => (
         <span
           key={drop.id}
-          className="absolute text-primary/30 animate-rain-fall font-mono" // Using primary color with low opacity
+          className="absolute text-primary/60 animate-rain-fall font-mono" // Using primary color with increased opacity
           style={{
             left: drop.left,
             animationDelay: drop.animationDelay,
