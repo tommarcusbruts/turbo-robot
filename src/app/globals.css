@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -141,5 +142,21 @@ body {
   }
    .handwritten-highlight.highlight-red::before {
     background-color: hsl(var(--destructive) / 0.3);
+  }
+}
+
+@layer utilities {
+  @keyframes rain-fall {
+    0% {
+      transform: translateY(-50px); /* Start above screen */
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh); /* End below screen height */
+      opacity: 0;
+    }
+  }
+  .animate-rain-fall {
+    animation: rain-fall linear infinite;
   }
 }

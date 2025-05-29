@@ -1,11 +1,14 @@
+
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, MessageCircle, Briefcase, FileText } from 'lucide-react';
+import { RainingCode } from '@/components/animations/RainingCode';
 
 export function HeroSection() {
   return (
-    <section className="w-full py-20 md:py-32 bg-gradient-to-br from-primary/10 via-background to-accent/10">
-      <div className="container mx-auto px-4 md:px-6 text-center">
+    <section className="relative w-full py-20 md:py-32 bg-gradient-to-br from-primary/10 via-background to-accent/10 overflow-hidden">
+      <RainingCode />
+      <div className="container mx-auto px-4 md:px-6 text-center relative z-10"> {/* Ensure content is above animation */}
         <div className="flex flex-col items-center space-y-8">
           <div className="relative group">
             <Image
