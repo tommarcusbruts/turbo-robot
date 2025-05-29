@@ -25,6 +25,7 @@ export function FakeTerminal() {
   ]);
   const [showCursor, setShowCursor] = useState(true);
   const terminalEndRef = useRef<HTMLDivElement>(null);
+  const isInitialMount = useRef(true); // Ref to track initial mount
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -34,7 +35,12 @@ export function FakeTerminal() {
   }, []);
 
   useEffect(() => {
-    terminalEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    // Only scroll if it's not the initial mount
+    if (isInitialMount.current) {
+      isInitialMount.current = false;
+    } else {
+      terminalEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    }
   }, [history]);
 
   const processCommand = (command: string) => {
@@ -80,7 +86,10 @@ export function FakeTerminal() {
         );
         break;
       case 'clear':
-        setHistory([{ id: Date.now(), type: 'output', text: 'Terminal cleared.' }]);
+        // Set history to a new welcome message or just a clear confirmation
+        // to trigger the useEffect for scrolling if desired after clear.
+        // For now, just clearing and showing a message.
+        setHistory([{ id: Date.now(), type: 'output', text: 'Terminal cleared.\n' + welcomeMessage }]);
         return;
       case 'whoami':
         type = 'output';
@@ -88,6 +97,11 @@ export function FakeTerminal() {
         break;
       case 'date':
         type = 'output';
+        // Ensure this runs client-side for correct date
+        // This part is tricky as processCommand is synchronous.
+        // For dynamic server-side values, we'd need an async approach or client-side generation.
+        // Given this is a "fake" terminal, direct client-side Date is acceptable.
+        // The value will be calculated when processCommand is called.
         output = `Current Date: ${new Date().toLocaleString()}`;
         break;
     }
@@ -163,3 +177,4 @@ export function FakeTerminal() {
     </section>
   );
 }
+
